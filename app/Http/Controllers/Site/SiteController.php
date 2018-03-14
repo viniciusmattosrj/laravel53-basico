@@ -34,7 +34,11 @@ class SiteController extends Controller
         
         $xss = '<script>alert("Ataque XSS");</script>';
         
-        return view('site.home.index', compact('title', 'xss'));
+        $var1 = '123';
+        
+        $arrayData = [];
+        
+        return view('site.home.index', compact('title', 'xss','var1','arrayData'));
     }
     
     public function contato()

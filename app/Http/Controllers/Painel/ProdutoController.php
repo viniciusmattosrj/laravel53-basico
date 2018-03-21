@@ -8,12 +8,18 @@ use App\Models\Painel\Product;
 
 class ProdutoController extends Controller
 {
+    private $product;
+            
+    public function __construct(Product $product) {
+        $this->product = $product;
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Product $product)
+    public function index()
     {
         /* Pegando os dados da minha model */
         $products = $product->all();
@@ -85,5 +91,25 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function tests()
+    {
+        //Retorna true ou false
+            $insert = $this->product->insert([
+                'name'        => 'Nome do Produto',
+                'number'      => 434445,
+                'active'      => false,
+                'category'    => 'eletronicos',
+                'description' => 'Descrição vem aqui',
+            ]);
+            if( $inserir )
+            {
+                return 'Inserido com sucesso';
+            }else
+            {
+               return 'Falha ao inserir';
+            }
+        
     }
 }

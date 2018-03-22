@@ -24,7 +24,7 @@ class ProdutoController extends Controller
         /* Pegando os dados da minha model */
         $products = $product->all();
         
-        return view('painel.products.index',compact('products'));
+        return view('painel.products.index', compact('products'));
     }
 
     /**
@@ -96,20 +96,17 @@ class ProdutoController extends Controller
     public function tests()
     {
         //Retorna true ou false
-            $insert = $this->product->insert([
-                'name'        => 'Nome do Produto',
-                'number'      => 434445,
+            $insert = $this->product->create([
+                'name'        => 'Andrade',
+                'number'      => 434443,
                 'active'      => false,
                 'category'    => 'eletronicos',
                 'description' => 'Descrição vem aqui',
             ]);
-            if( $inserir )
-            {
-                return 'Inserido com sucesso';
-            }else
-            {
-               return 'Falha ao inserir';
-            }
-        
+            if( $insert )
+                return "Inserido com sucesso, ID: {$insert->id}";
+            else
+                return 'Falha ao inserir';
+             
     }
 }

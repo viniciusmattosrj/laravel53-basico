@@ -96,17 +96,29 @@ class ProdutoController extends Controller
     public function tests()
     {
         //Retorna true ou false
-            $insert = $this->product->create([
-                'name'        => 'Andrade',
-                'number'      => 434443,
-                'active'      => false,
-                'category'    => 'eletronicos',
-                'description' => 'Descrição vem aqui',
-            ]);
-            if( $insert )
-                return "Inserido com sucesso, ID: {$insert->id}";
-            else
-                return 'Falha ao inserir';
-             
+        /*
+        $insert = $this->product->create([
+            'name'        => 'Andrade',
+            'number'      => 434443,
+            'active'      => false,
+            'category'    => 'eletronicos',
+            'description' => 'Descrição vem aqui',
+        ]);
+        if( $insert )
+            return "Inserido com sucesso, ID: {$insert->id}";
+        else
+            return 'Falha ao inserir';
+        */
+        $prod = $this->product->find(12);
+        $update = $prod->update([
+            'name'        => 'Update',
+            'number'      => 78798,
+            'active'      => true,
+        ]);        
+
+        if ( $update )
+            return 'Alterado com sucesso!';
+        else
+            return 'Falha ao alterar';
     }
 }

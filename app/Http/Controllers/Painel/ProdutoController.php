@@ -109,15 +109,16 @@ class ProdutoController extends Controller
         else
             return 'Falha ao inserir';
         */
-        $prod = $this->product->find(12);
-        $update = $prod->update([
-            'name'        => 'Update',
-            'number'      => 78798,
-            'active'      => true,
-        ]);        
+        $update = $this->product
+                        ->where('number', 67675756)
+                        ->update([
+                                'name'        => 'Name Atualizado',
+                                'number'      => 78799,
+                                'active'      => true,
+                            ]);        
 
         if ( $update )
-            return 'Alterado com sucesso!';
+            return 'Alterado com sucesso 2!';
         else
             return 'Falha ao alterar';
     }

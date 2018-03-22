@@ -117,9 +117,9 @@ class ProdutoController extends Controller
                                 'active'      => true,
                             ]);        
 
-        if ( $update )
-            return 'Alterado com sucesso 2!';
-        else
-            return 'Falha ao alterar';
+            if ( $update )
+                return 'Alterado com sucesso 2!';
+            else
+                return 'Falha ao alterar';
     }
 }

@@ -1,3 +1,7 @@
+@extends('painel.templates.template')
+
+@section('content')
+
 <h1>Listagem dos produtos</h1>
 
 <table>
@@ -12,3 +16,5 @@
         </tr>   
     @endforeach
 </table>
+
+@endsection

@@ -21,10 +21,12 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        /* Pegando os dados da minha model */
-        $products = $product->all();
+        $title = 'Listagem dos produtos';
         
-        return view('painel.products.index', compact('products'));
+        /* Pegando os dados da minha model */
+        $products = $this->product->all();
+        
+        return view('painel.products.index',compact('products', 'title'));
     }
 
     /**
@@ -123,9 +125,9 @@ class ProdutoController extends Controller
             else
                 return 'Falha ao alterar';
          * 
-         */
+        */
         $delete = $this->product
-                            ->where('number', 78798)
+                            ->where('number', 434440)
                             ->delete();
                             
         if ( $delete )

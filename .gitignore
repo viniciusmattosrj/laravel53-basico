@@ -1,13 +1,19 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-/.idea
-/.vscode
-/.vagrant
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+#----------------------------------------------------------
+# Files Configurations
+#----------------------------------------------------------
 .env
+docker-compose.yml
+
+#----------------------------------------------------------
+# Folders configurations
+#----------------------------------------------------------
+node_modules/
+dist/
+/vendor/
+
+
+#----------------------------------------------------------
+# Files IDE
+#----------------------------------------------------------
+.vscode/
+.idea/
